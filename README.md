@@ -1,8 +1,9 @@
-# TurboWarp Packager
+## Permafy Compiler
+---also known as **Permafy Packager**---
 
-https://packager.turbowarp.org/
+https://permafy.github.io/compiler/
 
-Converts Scratch projects into HTML files, zip archives, or executable programs for Windows, macOS, and Linux.
+Package Permafy projects into working executables.
 
 ## Development
 
