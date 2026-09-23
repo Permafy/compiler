@@ -1,10 +1,9 @@
 name: Deploy to GitHub Pages
-env:
-    GITHUB_TOKEN: ${{  secrets.t  }}
 on:
     workflow_dispatch:
     repository_dispatch:
     push:
+        branches: [master]
 
 permissions:
     contents: read
