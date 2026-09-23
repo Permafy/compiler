@@ -1,13 +1,14 @@
 <script>
   import Section from './Section.svelte';
-  const color = '#b117f8';
+  import {ACCENT_COLOR} from '../packager/brand';
+  const color = ACCENT_COLOR;
 </script>
 
 <style>
   /*
   .badge {
-    background-color: #b117f8;
-    border-bottom: 2px solid #6f0073;
+    background-color: #8CA9FF;
+    border-bottom: 2px solid #6278C5;
     color: white;
     padding: 2px 5px;
     border-radius: 4px;

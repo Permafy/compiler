@@ -14,6 +14,7 @@
   import {extractProjectId, isValidURL, getTitleFromURL} from './url-utils';
   import Task from './task';
   import importExternalProject from './import-external-project';
+  import {ACCENT_COLOR} from '../packager/brand';
 
   const defaultProjectId = '4624594217';
 
@@ -114,7 +115,7 @@
   };
   const handleDrop = ({detail: dataTransfer}) => {
     const name = dataTransfer.files[0].name;
-    if (name.endsWith('.sb') || name.endsWith('.sb2') || name.endsWith('.sb3') || name.endsWith('.pm') || name.endsWith('.pmp')) {
+    if (name.endsWith('.sb') || name.endsWith('.sb2') || name.endsWith('.sb3') || name.endsWith('.pm') || name.endsWith('.pmp') || name.endsWith('.pmf')) {
       $type = 'file';
       setFiles(dataTransfer.files);
     }
@@ -225,7 +226,7 @@
 {/if}
 
 <DropArea on:drop={handleDrop}>
-  <Section accent="#4C97FF">
+  <Section accent={ACCENT_COLOR}>
     <h2>{$_('select.select')}</h2>
     <p>{$_('select.selectHelp')}</p>
 
@@ -245,7 +246,7 @@
           <input type="radio" name="project-type" bind:group={$type} value="file">
           {$_('select.file')}
         </label>
-        <input hidden={$type !== "file"} on:change={handleFileInputChange} bind:this={fileInputElement} type="file" accept=".sb,.sb2,.sb3, .pm, .pmp, .goobert">
+        <input hidden={$type !== "file"} on:change={handleFileInputChange} bind:this={fileInputElement} type="file" accept=".sb,.sb2,.sb3,.pm,.pmp,.pmf,.goobert">
       </div>
       <div class="option">
         <label>
