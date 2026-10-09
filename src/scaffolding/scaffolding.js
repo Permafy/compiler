@@ -7,6 +7,7 @@ import JSZip from 'jszip';
 
 import {EventTarget} from '../common/event-target';
 import VideoProvider from './video';
+import registerPermafyBlocks from './permafy-blocks';
 import Cloud from './cloud';
 import Question from './question';
 import {ListMonitor, VariableMonitor} from './monitor';
@@ -315,6 +316,7 @@ class Scaffolding extends EventTarget {
 
   setup () {
     this.vm = new VM();
+    registerPermafyBlocks(this.vm);
     this.vm.setCompatibilityMode(true);
     this.vm.setLocale(navigator.language);
     this.vm.on('MONITORS_UPDATE', this._onmonitorsupdate.bind(this));
